@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_elements_hotspots",
+  "info": {
+    "displayName": "Hotspot",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "xCoordinates": {
+      "type": "float"
+    },
+    "yCoordinates": {
+      "type": "float"
+    },
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

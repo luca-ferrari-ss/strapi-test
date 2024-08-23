@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_tabs",
+  "info": {
+    "displayName": "Tab",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

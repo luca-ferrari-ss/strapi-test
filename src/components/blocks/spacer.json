@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_blocks_spacers",
+  "info": {
+    "displayName": "Spacer",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "pxDesktop": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "pxMobile": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

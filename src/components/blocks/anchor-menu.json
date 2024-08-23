@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_anchor_menus",
+  "info": {
+    "displayName": "Anchor menu",
+    "icon": "hashtag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "anchors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.anchor-item"
+    }
+  }
+}

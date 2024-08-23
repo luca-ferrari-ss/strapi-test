@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_anchor-item",
+  "info": {
+    "displayName": "Anchor item",
+    "description": "",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "anchorId": {
+      "type": "string"
+    }
+  }
+}

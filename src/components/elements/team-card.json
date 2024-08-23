@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_team_cards",
+  "info": {
+    "displayName": "Team card",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "name": {
+      "type": "blocks"
+    },
+    "textHover": {
+      "type": "blocks"
+    },
+    "multimedia": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.multimedia"
+    }
+  }
+}

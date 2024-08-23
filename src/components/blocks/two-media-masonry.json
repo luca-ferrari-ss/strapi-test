@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_blocks_two_media_masonry",
+  "info": {
+    "displayName": "Two media masonry",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "reverseColumnsOrder": {
+      "type": "boolean",
+      "default": false
+    },
+    "multimediaLeft": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.multimedia",
+      "min": 1
+    },
+    "multimediaRight": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.multimedia",
+      "min": 1
+    }
+  }
+}

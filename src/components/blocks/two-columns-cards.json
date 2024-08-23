@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_elements_two_columns_cards",
+  "info": {
+    "displayName": "Two columns cards",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "reverseColumnsOrder": {
+      "type": "boolean",
+      "default": false
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card",
+      "max": 2,
+      "min": 2
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_elements_multimedia",
+  "info": {
+    "displayName": "Multimedia",
+    "description": "",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "desktopImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.image"
+    },
+    "mobileImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.image"
+    },
+    "showVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "desktopVideo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.video"
+    },
+    "mobileVideo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.video"
+    }
+  }
+}

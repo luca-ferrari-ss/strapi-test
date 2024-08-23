@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_forms",
+  "info": {
+    "displayName": "Form"
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

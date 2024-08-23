@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_masonry_galleries",
+  "info": {
+    "displayName": "Masonry gallery",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean"
+    },
+    "multimedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.multimedia",
+      "max": 6
+    }
+  }
+}

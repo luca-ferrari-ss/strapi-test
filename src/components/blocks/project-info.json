@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_project_infos",
+  "info": {
+    "displayName": "Project info",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

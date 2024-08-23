@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_elements_videos",
+  "info": {
+    "displayName": "Video",
+    "description": "",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "portrait": {
+      "type": "boolean",
+      "default": false
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    }
+  }
+}

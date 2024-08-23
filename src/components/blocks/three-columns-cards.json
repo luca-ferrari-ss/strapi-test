@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_three_columns_cards",
+  "info": {
+    "displayName": "Three columns cards",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card",
+      "max": 3,
+      "min": 3
+    }
+  }
+}

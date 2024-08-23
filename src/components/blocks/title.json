@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_titles",
+  "info": {
+    "displayName": "Title",
+    "description": "",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "Left",
+        "Center",
+        "Right"
+      ],
+      "default": "Left"
+    },
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_tables",
+  "info": {
+    "displayName": "Table",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.table-row"
+    }
+  }
+}

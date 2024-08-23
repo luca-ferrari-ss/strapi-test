@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_horizontal_tabs",
+  "info": {
+    "displayName": "Horizontal tabs",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "blocks"
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.tab"
+    }
+  }
+}

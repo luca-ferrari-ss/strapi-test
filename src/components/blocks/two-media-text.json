@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_blocks_two_media_texts",
+  "info": {
+    "displayName": "Two media text",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "reverseColumnsOrder": {
+      "type": "boolean",
+      "default": false
+    },
+    "spaceBetweenColumns": {
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    },
+    "multimedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.multimedia",
+      "max": 2,
+      "min": 2
+    }
+  }
+}

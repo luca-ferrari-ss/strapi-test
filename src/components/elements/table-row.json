@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_table_rows",
+  "info": {
+    "displayName": "Table row",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "textLeft": {
+      "type": "string"
+    },
+    "textRight": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    },
+    "multimediaHover": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.multimedia"
+    }
+  }
+}

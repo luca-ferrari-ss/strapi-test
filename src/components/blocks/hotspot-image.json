@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_blocks_hotspot_images",
+  "info": {
+    "displayName": "Hotspot image",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "desktopImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.image"
+    },
+    "desktopHotspots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.hotspot"
+    },
+    "mobileImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.image"
+    },
+    "mobileHotspots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.hotspot"
+    }
+  }
+}

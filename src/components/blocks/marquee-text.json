@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_marquee_texts",
+  "info": {
+    "displayName": "Marquee text",
+    "icon": "feather",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "internalTitle": {
+      "type": "string"
+    },
+    "blockId": {
+      "type": "string"
+    },
+    "hide": {
+      "type": "boolean"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}
