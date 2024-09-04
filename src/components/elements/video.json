@@ -11,10 +11,6 @@
       "type": "boolean",
       "default": false
     },
-    "portrait": {
-      "type": "boolean",
-      "default": false
-    },
     "poster": {
       "type": "media",
       "multiple": false,

@@ -3,7 +3,7 @@ export default ({ env }) => ({
     salt: env('API_TOKEN_SALT', 'someRandomLongString'),
   },
   auditLogs: { // only accessible with an Enterprise plan
-    enabled: env.bool('AUDIT_LOGS_ENABLED', true),
+    enabled: env.bool('AUDIT_LOGS_ENABLED', false),
   },
   auth: {
     secret: env('ADMIN_JWT_SECRET', 'someSecretKey'),
@@ -12,6 +12,10 @@ export default ({ env }) => ({
     token: { 
       salt: env('TRANSFER_TOKEN_SALT', 'anotherRandomLongString'),
     } 
+  },
+  flags: {
+    nps: env.bool('FLAG_NPS', false),
+    promoteEE: env.bool('FLAG_PROMOTE_EE', false),
   },
   url: "/dashboard",
 });

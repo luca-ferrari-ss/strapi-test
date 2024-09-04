@@ -787,6 +787,144 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAgendaAgenda extends Schema.CollectionType {
+  collectionName: 'agendas';
+  info: {
+    singularName: 'agenda';
+    pluralName: 'agendas';
+    displayName: 'Agenda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::agenda.agenda', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    transparentHeader: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    spinningIcon: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    keywords: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    architect: Attribute.Blocks;
+    photographer: Attribute.Blocks;
+    products: Attribute.Blocks;
+    coverImage: Attribute.Component<'elements.image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.DynamicZone<
+      [
+        'blocks.anchor',
+        'blocks.anchor-menu',
+        'blocks.breadcrumbs',
+        'blocks.button',
+        'blocks.designers-list',
+        'blocks.download-documents',
+        'blocks.download-product-files',
+        'blocks.download-products',
+        'blocks.download-single',
+        'blocks.form',
+        'blocks.headline-text',
+        'blocks.hero',
+        'blocks.horizontal-tabs',
+        'blocks.hotspot-image',
+        'blocks.journal-list',
+        'blocks.marquee-text',
+        'blocks.masonry-gallery',
+        'blocks.materials-list',
+        'blocks.media-text',
+        'blocks.project-info',
+        'blocks.projects-list',
+        'blocks.quote-media',
+        'blocks.quote',
+        'blocks.single-media-text',
+        'blocks.single-media',
+        'blocks.slider-team-cards',
+        'blocks.spacer',
+        'blocks.table',
+        'blocks.text',
+        'blocks.three-columns-cards',
+        'blocks.title',
+        'blocks.two-columns-cards',
+        'blocks.two-media-masonry-text',
+        'blocks.two-media-masonry',
+        'blocks.two-media-text',
+        'blocks.vertical-tabs'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    rank: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::agenda.agenda',
+      'oneToMany',
+      'api::agenda.agenda'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiContactsPageContactsPage extends Schema.SingleType {
   collectionName: 'contacts_pages';
   info: {
@@ -894,115 +1032,6 @@ export interface ApiContactsPageContactsPage extends Schema.SingleType {
       'api::contacts-page.contacts-page',
       'oneToMany',
       'api::contacts-page.contacts-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiDesignFusionSessionDesignFusionSession
-  extends Schema.SingleType {
-  collectionName: 'design_fusion_sessions';
-  info: {
-    singularName: 'design-fusion-session';
-    pluralName: 'design-fusion-sessions';
-    displayName: 'Design Fusion Session';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    slug: Attribute.UID &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<'design-fusion-session'>;
-    transparentHeader: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<false>;
-    spinningIcon: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<false>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    blocks: Attribute.DynamicZone<
-      [
-        'blocks.accordion-configurations',
-        'blocks.accordion-downloads',
-        'blocks.anchor',
-        'blocks.anchor-menu',
-        'blocks.breadcrumbs',
-        'blocks.button',
-        'blocks.form',
-        'blocks.headline-text',
-        'blocks.hero',
-        'blocks.horizontal-tabs',
-        'blocks.hotspot-image',
-        'blocks.marquee-text',
-        'blocks.masonry-gallery',
-        'blocks.materials-list',
-        'blocks.project-info',
-        'blocks.projects-list',
-        'blocks.quote-media',
-        'blocks.quote',
-        'blocks.single-media-text',
-        'blocks.single-media',
-        'blocks.slider-team-cards',
-        'blocks.spacer',
-        'blocks.table',
-        'blocks.text',
-        'blocks.three-columns-cards',
-        'blocks.title',
-        'blocks.two-columns-cards',
-        'blocks.two-media-masonry-text',
-        'blocks.two-media-masonry',
-        'blocks.two-media-text',
-        'blocks.vertical-tabs'
-      ]
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::design-fusion-session.design-fusion-session',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::design-fusion-session.design-fusion-session',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::design-fusion-session.design-fusion-session',
-      'oneToMany',
-      'api::design-fusion-session.design-fusion-session'
     >;
     locale: Attribute.String;
   };
@@ -1428,58 +1457,6 @@ export interface ApiDocumentDocument extends Schema.CollectionType {
       'api::document.document',
       'oneToMany',
       'api::document.document'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiDownloadDownload extends Schema.CollectionType {
-  collectionName: 'downloads';
-  info: {
-    singularName: 'download';
-    pluralName: 'downloads';
-    displayName: 'Download';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    rank: Attribute.Integer &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::download.download',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::download.download',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::download.download',
-      'oneToMany',
-      'api::download.download'
     >;
     locale: Attribute.String;
   };
@@ -2457,6 +2434,136 @@ export interface ApiMaterialsPageMaterialsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::page.page', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    transparentHeader: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    spinningIcon: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    keywords: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    architect: Attribute.Blocks;
+    photographer: Attribute.Blocks;
+    products: Attribute.Blocks;
+    coverImage: Attribute.Component<'elements.image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.DynamicZone<
+      [
+        'blocks.anchor',
+        'blocks.anchor-menu',
+        'blocks.breadcrumbs',
+        'blocks.button',
+        'blocks.designers-list',
+        'blocks.download-documents',
+        'blocks.download-product-files',
+        'blocks.download-products',
+        'blocks.download-single',
+        'blocks.form',
+        'blocks.headline-text',
+        'blocks.hero',
+        'blocks.horizontal-tabs',
+        'blocks.hotspot-image',
+        'blocks.journal-list',
+        'blocks.marquee-text',
+        'blocks.masonry-gallery',
+        'blocks.materials-list',
+        'blocks.media-text',
+        'blocks.project-info',
+        'blocks.projects-list',
+        'blocks.quote-media',
+        'blocks.quote',
+        'blocks.single-media-text',
+        'blocks.single-media',
+        'blocks.slider-team-cards',
+        'blocks.spacer',
+        'blocks.table',
+        'blocks.text',
+        'blocks.three-columns-cards',
+        'blocks.title',
+        'blocks.two-columns-cards',
+        'blocks.two-media-masonry-text',
+        'blocks.two-media-masonry',
+        'blocks.two-media-text',
+        'blocks.vertical-tabs'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    rank: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page.page',
+      'oneToMany',
+      'api::page.page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -2892,6 +2999,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToOne',
       'api::project-category.project-category'
     >;
+    architect: Attribute.Blocks;
+    photographer: Attribute.Blocks;
+    products: Attribute.Blocks;
     coverImage: Attribute.Component<'elements.image'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -3145,6 +3255,144 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiVenueVenue extends Schema.CollectionType {
+  collectionName: 'venues';
+  info: {
+    singularName: 'venue';
+    pluralName: 'venues';
+    displayName: 'Venue';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::venue.venue', 'title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    transparentHeader: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    spinningIcon: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    keywords: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    architect: Attribute.Blocks;
+    photographer: Attribute.Blocks;
+    products: Attribute.Blocks;
+    coverImage: Attribute.Component<'elements.image'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.DynamicZone<
+      [
+        'blocks.anchor',
+        'blocks.anchor-menu',
+        'blocks.breadcrumbs',
+        'blocks.button',
+        'blocks.designers-list',
+        'blocks.download-documents',
+        'blocks.download-product-files',
+        'blocks.download-products',
+        'blocks.download-single',
+        'blocks.form',
+        'blocks.headline-text',
+        'blocks.hero',
+        'blocks.horizontal-tabs',
+        'blocks.hotspot-image',
+        'blocks.journal-list',
+        'blocks.marquee-text',
+        'blocks.masonry-gallery',
+        'blocks.materials-list',
+        'blocks.media-text',
+        'blocks.project-info',
+        'blocks.projects-list',
+        'blocks.quote-media',
+        'blocks.quote',
+        'blocks.single-media-text',
+        'blocks.single-media',
+        'blocks.slider-team-cards',
+        'blocks.spacer',
+        'blocks.table',
+        'blocks.text',
+        'blocks.three-columns-cards',
+        'blocks.title',
+        'blocks.two-columns-cards',
+        'blocks.two-media-masonry-text',
+        'blocks.two-media-masonry',
+        'blocks.two-media-text',
+        'blocks.vertical-tabs'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    rank: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::venue.venue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::venue.venue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::venue.venue',
+      'oneToMany',
+      'api::venue.venue'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -3163,13 +3411,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::agenda.agenda': ApiAgendaAgenda;
       'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
-      'api::design-fusion-session.design-fusion-session': ApiDesignFusionSessionDesignFusionSession;
       'api::design-fusion-session-page.design-fusion-session-page': ApiDesignFusionSessionPageDesignFusionSessionPage;
       'api::designer.designer': ApiDesignerDesigner;
       'api::designers-page.designers-page': ApiDesignersPageDesignersPage;
       'api::document.document': ApiDocumentDocument;
-      'api::download.download': ApiDownloadDownload;
       'api::downloads-page.downloads-page': ApiDownloadsPageDownloadsPage;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
@@ -3180,6 +3427,7 @@ declare module '@strapi/types' {
       'api::material-category.material-category': ApiMaterialCategoryMaterialCategory;
       'api::material-typology.material-typology': ApiMaterialTypologyMaterialTypology;
       'api::materials-page.materials-page': ApiMaterialsPageMaterialsPage;
+      'api::page.page': ApiPagePage;
       'api::product.product': ApiProductProduct;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-typology.product-typology': ApiProductTypologyProductTypology;
@@ -3187,6 +3435,7 @@ declare module '@strapi/types' {
       'api::project.project': ApiProjectProject;
       'api::project-category.project-category': ApiProjectCategoryProjectCategory;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
+      'api::venue.venue': ApiVenueVenue;
     }
   }
 }

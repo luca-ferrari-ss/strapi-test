@@ -2,13 +2,11 @@
 
 import { ProductCategory } from './product-category';
 import { ProductTypology } from './product-typology';
-import { Designer } from './designer';
 import { Image } from '../components/elements/Image';
 import { Seo } from '../components/shared/Seo';
 import { DownloadFile } from '../components/elements/DownloadFile';
 import { ProductCategory_Plain } from './product-category';
 import { ProductTypology_Plain } from './product-typology';
-import { Designer_Plain } from './designer';
 import { Image_Plain } from '../components/elements/Image';
 import { Seo_Plain } from '../components/shared/Seo';
 import { DownloadFile_Plain } from '../components/elements/DownloadFile';
@@ -26,7 +24,6 @@ export interface Product {
     spinningIcon?: boolean;
     category?: { data: ProductCategory };
     typology?: { data: ProductTypology };
-    designer?: { data: Designer };
     designFusionSessionProduct?: boolean;
     coverImage?: Image;
     keywords?: string;
@@ -46,7 +43,6 @@ export interface Product_Plain {
   spinningIcon?: boolean;
   category?: ProductCategory_Plain;
   typology?: ProductTypology_Plain;
-  designer?: Designer_Plain;
   designFusionSessionProduct?: boolean;
   coverImage?: Image_Plain;
   keywords?: string;
@@ -66,7 +62,6 @@ export interface Product_NoRelations {
   spinningIcon?: boolean;
   category?: number;
   typology?: number;
-  designer?: number;
   designFusionSessionProduct?: boolean;
   coverImage?: Image_NoRelations;
   keywords?: string;
@@ -86,7 +81,6 @@ export interface Product_AdminPanelLifeCycle {
   spinningIcon?: boolean;
   category?: AdminPanelRelationPropertyModification<ProductCategory_Plain>;
   typology?: AdminPanelRelationPropertyModification<ProductTypology_Plain>;
-  designer?: AdminPanelRelationPropertyModification<Designer_Plain>;
   designFusionSessionProduct?: boolean;
   coverImage?: Image_Plain;
   keywords?: string;

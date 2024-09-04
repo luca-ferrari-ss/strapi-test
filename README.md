@@ -90,3 +90,9 @@ Note: localhost should be replaced with machine local IP address if you want to 
 ## Admin user
 email: master@sombrerostudio.com
 password: Mexican123
+
+## Generate JWT Secret from terminal
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+## Generate secrets
+https://generate.plus/en/base64

@@ -44,10 +44,10 @@ export default {
     // Extend the translations
     translations: {
       en: {
-        "app.components.LeftMenu.navbrand.title": "Xilia Wood",
+        "app.components.LeftMenu.navbrand.title": "Palm Beach Cannes",
         "app.components.LeftMenu.navbrand.workplace": "Dashboard",
         "Auth.form.welcome.title": "Welcome!",
-        "Auth.form.welcome.subtitle": "Log in to Xilia Wood dashboard",
+        "Auth.form.welcome.subtitle": "Log in to Palm Beach Cannes dashboard",
       },
       it: IT
     },

@@ -7,7 +7,7 @@ import { Seo_Plain } from '../components/shared/Seo';
 import { Image_NoRelations } from '../components/elements/Image';
 import { Seo_NoRelations } from '../components/shared/Seo';
 
-export interface Project {
+export interface Agenda {
   id: number;
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    title?: string;
@@ -23,10 +23,10 @@ export interface Project {
     blocks?: any;
     rank?: number;
     locale: string;
-    localizations?: { data: Project[] };
+    localizations?: { data: Agenda[] };
   };
 }
-export interface Project_Plain {
+export interface Agenda_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title?: string;
   slug?: string;
@@ -41,10 +41,10 @@ export interface Project_Plain {
   blocks?: any;
   rank?: number;
   locale: string;
-  localizations?: Project_Plain[];
+  localizations?: Agenda_Plain[];
 }
 
-export interface Project_NoRelations {
+export interface Agenda_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title?: string;
   slug?: string;
@@ -59,10 +59,10 @@ export interface Project_NoRelations {
   blocks?: any;
   rank?: number;
   locale: string;
-  localizations?: Project[];
+  localizations?: Agenda[];
 }
 
-export interface Project_AdminPanelLifeCycle {
+export interface Agenda_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  title?: string;
   slug?: string;
@@ -77,5 +77,5 @@ export interface Project_AdminPanelLifeCycle {
   blocks?: any;
   rank?: number;
   locale: string;
-  localizations?: Project[];
+  localizations?: Agenda[];
 }

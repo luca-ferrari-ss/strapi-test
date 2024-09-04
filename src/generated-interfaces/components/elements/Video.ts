@@ -5,20 +5,17 @@ import { Media_Plain } from '../../common/Media';
 
 export interface Video {
   autoplay?: boolean;
-  portrait?: boolean;
   poster?: { data: Media };
   media?: { data: Media };
 }
 export interface Video_Plain {
   autoplay?: boolean;
-  portrait?: boolean;
   poster?: Media_Plain;
   media?: Media_Plain;
 }
 
 export interface Video_NoRelations {
   autoplay?: boolean;
-  portrait?: boolean;
   poster?: number;
   media?: number;
 }

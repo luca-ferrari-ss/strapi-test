@@ -92,8 +92,8 @@ export default ({ env }) => ({
         // ... any custom nodemailer options
       },
       settings: {
-        defaultFrom: env("SMTP_USERNAME", "hello@example.com"),
-        defaultReplyTo: env("SMTP_USERNAME", "hello@example.com"),
+        defaultFrom: env("SMTP_EMAIL", "hello@example.com"),
+        defaultReplyTo: env("SMTP_EMAIL", "hello@example.com"),
       },
     },
   },
